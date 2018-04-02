@@ -5,8 +5,8 @@
         <div class="modal-content">
             <p>Some text in the Modal..</p>
             <component :is="dynamicComponent"></component>
-            <button v-on:click="closeModal">Отмена</button>
-            <button>Создать</button>
+            <button v-on:click="closeModal" class="btn btn-warning">Отмена</button>
+            <button class="btn btn-success">Создать</button>
         </div>
     </div>
 </template>
