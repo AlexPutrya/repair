@@ -19,8 +19,12 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
-        changeDropdownVision(state){
-            state.dropdown.isActive = !state.dropdown.isActive;
+        changeDropdownVision(state, payload){
+            if(!payload){
+                state.dropdown.isActive = !state.dropdown.isActive;
+            }else{
+                state.dropdown.isActive = payload;
+            }
         },
         changeModalVision(state, payload){
             state.modal.isActive = payload;

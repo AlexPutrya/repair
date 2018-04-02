@@ -64,6 +64,7 @@
             openModal(content) {
                 this.$store.commit('changeModalVision', true);
                 this.$store.commit('setModalContent', content);
+                this.$store.commit('changeDropdownVision', false);
             },
             changeFilter() {
                 this.$store.commit('changeFilter', this.filter.selected);

@@ -13,6 +13,8 @@
 
 <script>
     import RepairForm from './RepairForm.vue';
+    import TakeBackForm from './TakeBackForm.vue';
+    import ClientOrderForm from './ClientOrderForm.vue';
 
     export default {
         computed: {
@@ -22,6 +24,10 @@
             dynamicComponent(){
                 if(this.$store.state.modal.content == 'repair'){
                     return RepairForm;
+                }else if(this.$store.state.modal.content == 'take_back'){
+                    return TakeBackForm;
+                }else if(this.$store.state.modal.content == 'client_order'){
+                    return ClientOrderForm;
                 }
             }
         },
@@ -31,7 +37,9 @@
             }
         },
         components : {
-            RepairForm
+            RepairForm,
+            TakeBackForm,
+            ClientOrderForm
         }
 
     }
