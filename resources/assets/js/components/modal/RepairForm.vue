@@ -1,5 +1,6 @@
 <template>
     <form>
+        <h2>Документ на гарантийный ремонт</h2>
         <div class="form-group">
             Клиент
             <input v-model="client" type="text" class="form-control">
@@ -38,10 +39,14 @@
             ТТН отправки
             <input v-model="track_number" type="text" class="form-control">
         </div>
+        <button v-on:click="closeModal" class="btn btn-warning">Отмена</button>
+        <button class="btn btn-success">Создать</button>
     </form>
 </template>
 
 <script>
+    import {mapActions} from 'vuex';
+
     export default {
         data() {
             return {
@@ -54,6 +59,11 @@
                 description: '',
                 track_number: ''
             }
+        },
+        methods: {
+            ...mapActions([
+                'closeModal'
+            ])
         }
     }
 </script>

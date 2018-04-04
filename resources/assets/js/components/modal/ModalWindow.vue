@@ -1,12 +1,7 @@
 <template>
-    <div id="myModal" v-bind:class="['modal', {show: isActive}]">
-
-        <!-- Modal content -->
+    <div v-bind:class="['modal', {show: isActive}]">
         <div class="modal-content">
-            <p>Some text in the Modal..</p>
             <component :is="dynamicComponent"></component>
-            <button v-on:click="closeModal" class="btn btn-warning">Отмена</button>
-            <button class="btn btn-success">Создать</button>
         </div>
     </div>
 </template>
@@ -29,11 +24,6 @@
                 }else if(this.$store.state.modal.content == 'client_order'){
                     return ClientOrderForm;
                 }
-            }
-        },
-        methods: {
-            closeModal(){
-                this.$store.dispatch('closeModal');
             }
         },
         components : {
