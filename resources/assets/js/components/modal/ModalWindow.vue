@@ -17,13 +17,25 @@
                 return this.$store.state.modal.isActive;
             },
             dynamicComponent(){
-                if(this.$store.state.modal.content == 'repair'){
-                    return RepairForm;
-                }else if(this.$store.state.modal.content == 'take_back'){
-                    return TakeBackForm;
-                }else if(this.$store.state.modal.content == 'client_order'){
-                    return ClientOrderForm;
+                let content = this.$store.state.modal.content;
+                switch(content){
+                    case 'repair':
+                        return RepairForm;
+                        break;
+                    case 'take_back':
+                        return TakeBackForm;
+                        break;
+                    case 'client_order':
+                        return ClientOrderForm;
+                        break;
                 }
+                // if(content == 'repair'){
+                //     return RepairForm;
+                // }else if(content == 'take_back'){
+                //     return TakeBackForm;
+                // }else if(content == 'client_order'){
+                //     return ClientOrderForm;
+                // }
             }
         },
         components : {
