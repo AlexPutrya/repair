@@ -18,8 +18,9 @@
             <select  v-model="status" class="form-control">
                 <option>Зарегистрирован</option>
                 <option>Отправлен</option>
-                <option>Получен обратно</option>
-                <option>Закрыт</option>
+                <option>Принят от поставщика</option>
+                <option>Отдан клиенту</option>
+                <option>Не удовлетворен</option>
             </select>
         </div>
         <div class="form-group">
